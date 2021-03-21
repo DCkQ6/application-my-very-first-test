@@ -4,6 +4,11 @@ local_resource(
     'python now.py > start-time.txt',
 )
 
+local_resource(
+    'ingress',
+    'kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/provider/kind/deploy.yaml'
+)
+
 congrats = "🎉 Congrats, you ran a live_update! 🎉"
 docker_build('example-python-image:latest', '.', build_args={'flask_env': 'development'},
     live_update=[
@@ -17,6 +22,7 @@ docker_build('example-python-image:latest', '.', build_args={'flask_env': 'devel
             format(congrats)),
 ], ignore=[".git", "README.md"])
 
+k8s_yaml('namespace.yaml')
 yaml = helm(
   'chart',
   name='my-very-first',
