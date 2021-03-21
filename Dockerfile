@@ -12,4 +12,5 @@ RUN pip install -r requirements.txt
 
 ADD . .
 
+EXPOSE 8000
 ENTRYPOINT ["python", "/app/app.py"]

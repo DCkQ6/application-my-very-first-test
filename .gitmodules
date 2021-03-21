@@ -1,0 +1,3 @@
+[submodule "chart"]
+	path = chart
+	url = git@github.com:DCkQ6/helm-chart-my-very-first-infrastructure.git

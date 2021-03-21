@@ -5,11 +5,11 @@ This application is based on a tutorial on [titl example-python](https://docs.ti
 
 ## How to set the dev environment
 
-1. Install prerequisites (docker, kubectl, ctlptl), described on [tilt install page](https://docs.tilt.dev/install.html)
+1. Install prerequisites (docker, kind, kubectl, ctlptl), described on [tilt install page](https://docs.tilt.dev/install.html)
 
 2. Start cluster:
 ```shell
-ctlptl create cluster kind --registry=ctlptl-registry
+ctlptl apply -f ctlptl_config.yaml
 ```
 3. start tilt
 ```shell
